@@ -1,0 +1,70 @@
+#portfolio-page {
+
+    .section-title {
+        font-size: 48px;
+
+        @media (max-width: map_get($grid-breakpoints, md)) {
+            font-size: 20px;
+        }
+
+        &__first-letter {
+            margin-right: -30px;
+        }
+    }
+}
+
+.portfolio-page-content {
+    position: relative;
+    height: 100vh;
+    max-height: 1000px;
+
+    @media (max-width: map_get($grid-breakpoints, sm)) {
+        height: 600px;
+    }
+
+    .portfolio-page-map {
+        @extend %pos;
+        @extend %img;
+        z-index: -3;
+    }
+}
+
+.portfolio-page-item {
+    padding: 100px 0;
+    height: 100%;
+
+    @media (max-width: map_get($grid-breakpoints, sm)) {
+        padding: 50px 0 20px;
+    }
+
+    &-description {
+        padding: 30px 90px;
+        max-width: 700px;
+        background: #2d2d2d;
+
+        @media (max-width: map_get($grid-breakpoints, sm)) {
+            padding-right: 15px;
+        }
+
+        &-logo {
+            position: relative;
+            margin-bottom: 20px;
+
+            img {
+                width: auto;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 5px;
+                left: -50px;
+                width: 25px;
+                height: 35px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPjxwYXRoIGQ9Ik0yNTYsMEMxNTMuNzU1LDAsNzAuNTczLDgzLjE4Miw3MC41NzMsMTg1LjQyNmMwLDEyNi44ODgsMTY1LjkzOSwzMTMuMTY3LDE3My4wMDQsMzIxLjAzNSAgICBjNi42MzYsNy4zOTEsMTguMjIyLDcuMzc4LDI0Ljg0NiwwYzcuMDY1LTcuODY4LDE3My4wMDQtMTk0LjE0NywxNzMuMDA0LTMyMS4wMzVDNDQxLjQyNSw4My4xODIsMzU4LjI0NCwwLDI1NiwweiBNMjU2LDI3OC43MTkgICAgYy01MS40NDIsMC05My4yOTItNDEuODUxLTkzLjI5Mi05My4yOTNTMjA0LjU1OSw5Mi4xMzQsMjU2LDkyLjEzNHM5My4yOTEsNDEuODUxLDkzLjI5MSw5My4yOTNTMzA3LjQ0MSwyNzguNzE5LDI1NiwyNzguNzE5eiIgZmlsbD0iIzdkN2Q3ZCIvPjwvc3ZnPg==);
+            }
+        }
+    }
+}

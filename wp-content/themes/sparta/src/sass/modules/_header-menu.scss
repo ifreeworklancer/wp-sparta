@@ -1,0 +1,89 @@
+#app-header {
+
+    &.light {
+
+        .logo {
+
+            &-item {
+
+                &--white {
+                    display: block;
+                }
+
+                &--dark {
+                    display: none;
+                }
+            }
+        }
+
+        .menu-list {
+
+            &-item {
+
+                &__link {
+                    color: #fff;
+                }
+
+                &::before {
+                    background: #fff;
+                }
+            }
+        }
+
+        .burger-menu {
+
+            .line {
+                background: #fff;
+            }
+        }
+    }
+
+    &.dark {
+
+        .menu-list {
+
+            &-item {
+
+                &__link {
+                    color: $primary;
+                }
+
+                &::before {
+                    background: $primary;
+                }
+            }
+        }
+    }
+
+    .burger-menu {
+        
+        @media (max-width: map_get($grid-breakpoints, xl)) {
+
+            &.active {
+
+                .line {
+                    background: #fff;
+                }
+            }
+        }
+    }
+
+    .menu {
+
+        @media (max-width: map_get($grid-breakpoints, xl)) {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: $primary;
+
+            .menu-list-item__link {
+                color: #fff;
+            }
+        }
+    }
+}

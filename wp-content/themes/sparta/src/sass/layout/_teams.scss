@@ -1,0 +1,206 @@
+#teams {
+    padding: 120px 0 80px;
+
+
+    @media (max-width: map_get($grid-breakpoints, md)) {
+        padding: 30px 0;
+        padding-left: 15px;
+    }
+
+    .section-title {
+        padding-left: 70px;
+        padding-bottom: 100px;
+
+        &__first-letter {
+            margin-right: 0;
+        }
+    }
+}
+
+.teams-content {
+
+    &-row {
+
+        &--main {
+            width: 30%;
+
+            @media (max-width: map_get($grid-breakpoints, md)) {
+                width: 100%;
+            }
+
+        }
+
+        &--secondary {
+            width: 70%;
+
+            @media (max-width: map_get($grid-breakpoints, md)) {
+                width: 100%;
+            }
+
+
+            .teams-content-row-cell {
+
+                &--top {
+
+                    .teams-item {
+                        width: 50%;
+
+                        &--height {
+                            padding-top: 290px;
+                        }
+
+                        &--normal {
+                            padding-top: 240px;
+                        }
+                    }
+                }
+
+                &--bottom {
+
+                    .teams-item {
+                        width: 33.3333%;
+
+                        @media (max-width: map_get($grid-breakpoints, md)) {
+                            width: 100%;
+                        }
+
+                        &--height {
+                            padding-top: 360px;
+                        }
+
+                        &--normal {
+                            padding-top: 310px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.teams-item {
+    position: relative;
+    overflow: hidden;
+    transition: .5s;
+
+    &-img {
+        @extend %pos;
+        @extend %img;
+        background-position: 50% 0;
+        z-index: -3;
+        transition: 1s;
+    }
+
+    &-description {
+        position: absolute;
+        top: 30px;
+        left: -200%;
+        transition: .5s;
+
+        &-name {
+            position: relative;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            font-weight: 600;
+            font-size: 18px;
+
+            @media (max-width: map_get($grid-breakpoints, sm)) {
+                font-size: 14px;
+                font-weight: normal;
+            }
+
+            &::before {
+                content: '';
+                @extend %pos;
+                top: auto;
+                right: 100%;
+                height: 1px;
+                background: $primary;
+                transition: .5s;
+                transition-delay: .4s;
+            }
+        }
+
+        &-position {
+            font-size: 14px;
+
+            @media (max-width: map_get($grid-breakpoints, sm)) {
+                font-size: 12px;
+            }
+        }
+    }
+
+    &--main {
+        padding-top: 510px;
+    }
+
+    @media (max-width: map_get($grid-breakpoints, sm)) {
+        padding-top: 200px !important;
+    }
+
+    &::before {
+        content: '';
+        @extend %pos;
+        top: auto;
+        right: 100%;
+        height: 4px;
+        background: $primary;
+        transition: .5s;
+    }
+
+    &:hover {
+        box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.2);
+
+        .teams-item-description {
+            left: 15px;
+
+            &-name {
+
+                &::before {
+                    right: 0;
+                }
+            }
+        }
+
+        .teams-item-img {
+            transform: scale(1.1);
+        }
+
+        &::before {
+            right: 0;
+        }
+    }
+}
+
+.teams-section-description {
+    position: relative;
+    margin-top: -30px;
+    padding: 0 30px 20px 70px;
+
+    @media (max-width: map_get($grid-breakpoints, xl)) {
+        margin-top: 30px;
+        padding-left: 15px;
+    }
+
+    &.is-focus {
+
+        &::before {
+            right: 50%;
+        }
+    }
+
+    &-text {
+        max-width: 390px;
+        font-size: 18px;
+    }
+
+    &::before {
+        content: '';
+        @extend %pos;
+        top: auto;
+        right: 100%;
+        height: 4px;
+        background: $dark;
+        transition: .5s;
+    }
+}

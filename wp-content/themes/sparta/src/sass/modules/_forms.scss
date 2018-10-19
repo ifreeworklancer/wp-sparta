@@ -1,0 +1,54 @@
+#form-feedback {
+    margin: 0 auto;
+    max-width: 410px;
+
+    .btn {
+        background: transparent;
+    }
+}
+
+.form-group {
+    opacity: .5;
+    transition: .5s;
+
+    &.in-focus {
+        opacity: 1;
+
+        .label-placeholder {
+            bottom: 70%;
+        }
+
+        
+        &::before {
+            right: 0;
+        }
+    }
+
+    .label-placeholder {
+        font-size: 18px;
+        bottom: 0;
+        transition: .5s;
+    }
+
+    .form-control {
+        position: relative;
+        background: transparent;
+        border: none;
+        color: #fff;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 90%;
+        bottom: 0;
+        height: 1px;
+        background: #fff;
+        transition: .5s;
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+}

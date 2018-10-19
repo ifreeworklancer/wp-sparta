@@ -1,0 +1,107 @@
+#partners {
+    padding: 70px 0 60px;
+    background: $secondary;
+    z-index: 2;
+    overflow: hidden;
+
+    .section-title {
+
+        &.is-focus {
+
+            &::before {
+                width: 100vw;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 2.5rem;
+            left: 120px;
+            width: 0;
+            height: 4px;
+            background: #fff;
+            z-index: -4;
+            transition: 2s;
+        }
+    }
+
+    .slider-nav-arrow {
+        position: relative;
+
+        &-item {
+            position: relative;
+            top: -70px;
+            z-index: 5;
+            cursor: pointer;
+
+            svg {
+                opacity: .5;
+                fill: #fff;
+                transition: .5s;
+            }
+
+            &:hover {
+                
+                svg {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.partners-description {
+    padding: 20px;
+    border: 4px solid #fff;
+
+    &__text {
+        font-size: 18px;
+    }
+
+    &__more-info {
+        position: relative;
+        padding-left: 60px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 1px;
+            background: #fff;
+        }
+    }
+}
+
+.partners-video {
+    position: relative;
+    left: -60px;
+    padding-top: 450px;
+    cursor: pointer;
+
+    @media (max-width: map_get($grid-breakpoints, sm)) {
+        left: 0;
+        margin-top: 40px;
+        padding-top: 350px;
+    }
+
+    &-img {
+        @extend %pos;
+        @extend %img;
+        z-index: -3;
+    }
+
+    &-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        svg {
+            fill: #c00;
+        }
+    }
+}

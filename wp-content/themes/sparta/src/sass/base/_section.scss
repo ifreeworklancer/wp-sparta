@@ -1,0 +1,29 @@
+section {
+    position: relative;
+}
+
+.section-title {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    text-transform: uppercase;
+    user-select: none;
+
+    &__first-letter {
+        font-size: 150px;
+        line-height: .85;
+        margin-right: -10px;
+    }
+
+    &--start {
+        align-items: flex-start;
+    }
+
+    &--center {
+        align-items: center;
+    }
+
+    &--end {
+        align-items: flex-end;
+    }
+}

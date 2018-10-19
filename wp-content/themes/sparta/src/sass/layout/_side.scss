@@ -1,0 +1,74 @@
+#side {
+    padding: 70px 0 0 130px;
+
+    @media (max-width: map_get($grid-breakpoints, md)) {
+        padding: 90px 15px 0;
+    }
+
+    .section-title {
+        position: relative;
+        z-index: 10;
+    }
+
+    .slider-nav-arrow {
+        width: 100%;
+        max-width: 170px;
+        margin-left: 120px;
+
+        &-item {
+            padding: 15px 20px;
+            background: $primary;
+            transition: .5s;
+            cursor: pointer;
+
+            &--next {
+                background: #313131;;
+                
+                svg {
+                    opacity: 1; 
+                }
+            }
+
+            svg {
+                opacity: .4;
+                fill: #fff;
+                transition: .5s;
+            }
+
+            &:hover {
+                
+                svg {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.side-content {
+    margin-top: -270px;
+
+    @media (max-width: map_get($grid-breakpoints, sm)) {
+        margin-top: 0;
+    }
+}
+
+.side-item {
+    padding: 35px 0;
+    padding-right: 70px;
+    max-width: 570px;
+    background: #fff;
+
+    @media (max-width: map_get($grid-breakpoints, md)) {
+        padding-right: 0;
+    }
+
+    &-text {
+        font-size: 20px;
+        margin: 0;
+
+        @media (max-width: map_get($grid-breakpoints, md)) {
+            font-size: 20px;
+        }
+    }
+}

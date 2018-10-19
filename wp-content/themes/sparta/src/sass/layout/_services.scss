@@ -1,0 +1,144 @@
+#services {
+    overflow: hidden;
+
+    .section-title {
+        position: relative;
+        padding-bottom: 15px;
+
+        &.is-focus {
+
+            &::before {
+                right: -1000px;
+            }
+        }
+
+        &::before {
+            content: '';
+            @extend %pos;
+            top: auto;
+            left: 15%;
+            right: 100%;
+            height: 4px;
+            background: $dark;
+            transition: 1.4s;
+        }
+    }
+}
+
+.services-tabs {
+    padding: 70px 0 90px;
+    overflow: hidden;
+
+    &-content {
+
+        &-img {
+            @extend %pos;
+            @extend %img;
+            opacity: 0;
+            transition: .5s;
+            z-index: -3;
+
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+
+    &-nav {
+        margin: 0 100px 0 auto;
+        max-width: 540px;
+
+
+        @media (max-width: map_get($grid-breakpoints, sm)) {
+            margin-right: 0;
+        }
+
+        &-title {
+            margin-bottom: 30px;
+            font-size: 18px;
+            font-weight: 300;
+        }
+
+        &-item {
+            margin-bottom: 45px;
+            opacity: .6;
+            transition: .5s;
+            cursor: pointer;
+
+            &.active {
+                opacity: 1;
+
+                .services-tabs-nav-item-title {
+
+                    &::before {
+                        right: 0;
+                    }
+                }
+            }
+
+            &-title {
+                position: relative;
+                margin-bottom: 15px;
+                font-size: 24px;
+
+                @media (max-width: map_get($grid-breakpoints, sm)) {
+                    font-size: 20px;
+                }
+
+                &__value {
+                    font-size: 72px;
+                    line-height: 1;
+
+                    @media (max-width: map_get($grid-breakpoints, sm)) {
+                        font-size: 50px;
+                    }
+                }
+
+                &::before {
+                    content: '';
+                    @extend %pos;
+                    top: auto;
+                    right: 100%;
+                    height: 1px;
+                    background: #fff;
+                    transition: .5s;
+                }
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.services-item {
+    padding-right: 50px;
+    padding-bottom: 120px;
+    max-width: 540px;
+
+    @media (max-width: map_get($grid-breakpoints, md)) {
+        padding-left: 15px;
+        padding-right: 0;
+    }
+
+    &-description {
+
+        &__title {
+            font-size: 24px;
+            font-weight: normal;
+        }
+
+        &__text {
+            margin: 0;
+            margin-left: -50px;
+            padding: 35px 40px;
+            border: 4px solid $dark;
+
+
+            @media (max-width: map_get($grid-breakpoints, sm)) {
+                margin-left: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,65 @@
+#header-banner {
+    height: 100vh;
+    max-height: 1000px;
+    background: url('../images/bg/header-bg.jpg') 50% 50% /cover no-repeat;
+}
+
+.header-banner-item {
+    position: relative;
+    padding-left: 170px;
+    background: rgba(#000, .9);
+    @include ondecor-border(#fff);
+
+    @media (max-width: map_get($grid-breakpoints, md)) {
+        padding: 0 15px;
+    }
+
+    .decoration {
+        @include indecor-border(#fff);
+        
+        &::after {
+            left: -100px;
+        }
+    }
+
+    &.is-focus {
+
+        .decoration {
+
+            &::before {
+                right: 0;
+            }
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            left: 0;
+        }
+    }
+
+    .btn {
+        right: -1px;
+        bottom: -1px;
+    }
+
+    .section-title {
+        margin-bottom: -45px;
+
+        @media (max-width: map_get($grid-breakpoints, md)) {
+            margin-bottom: 0;
+        }
+    }
+
+    &-description {
+        padding-left: 150px;
+        max-width: 490px;
+
+
+        @media (max-width: map_get($grid-breakpoints, md)) {
+            padding-left: 0;
+        }
+    }
+}

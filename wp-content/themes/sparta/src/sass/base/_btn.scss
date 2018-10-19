@@ -1,0 +1,59 @@
+.btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+
+    .decor {
+        @extend %pos;
+    }
+
+    &--white {
+        color: #fff;
+        @include ondecor-border(#fff);
+
+        .decor {
+            @include indecor-border(#fff);
+        }
+
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    &--dark {
+        color: $secondary;
+        @include ondecor-border($secondary);
+
+        .decor {
+            @include indecor-border($secondary);
+        }
+
+        &:hover {
+            color: $secondary;
+        }
+    }
+
+    &:hover {
+
+        .decor {
+
+            &::before {
+                right: 0;
+            }
+
+            &::after {
+                bottom: 0;
+            }
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            left: 0;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+$primary: #1f1f1f;
+$dark: #212121;
+$secondary: #232323;
+$light: #ebebeb;
+
+$body-color: #fff !default;
+
+$font-size-base: 1;
+$font-family-base: 'Montserrat', sans-serif;
+$headings-font-family: 'Montserrat', sans-serif;
+
+$headings-font-weight: 300;
+
+$link-hover-decoration: none !default;
+$input-btn-focus-width: 0 !default;
+$input-btn-focus-color: rgba(#fff, 0) !default;
+$input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
+
+$border-radius: 0;
+$btn-padding-x: 40px;
+$btn-padding-y: 15px;
+
+$h2-font-size: $font-size-base * 3 !default;
+$h3-font-size: $font-size-base * 1.875 !default;
+$h4-font-size: $font-size-base * 1.5 !default;

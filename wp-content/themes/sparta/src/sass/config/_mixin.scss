@@ -1,0 +1,49 @@
+@mixin indecor-border($color) {
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 90%;
+        height: 4px;
+        background: $color;
+        transition: .4s;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 70%;
+        width: 4px;
+        background: $color;
+        transition: .4s;
+    }
+}
+
+@mixin ondecor-border($color) {
+    
+    &::before {
+        content: "";
+        position: absolute;
+        top: 70%;
+        right: 0;
+        bottom: 0;
+        width: 4px;
+        background: $color;
+        transition: .4s;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 90%;
+        right: 0;
+        bottom: 0;
+        height: 4px;
+        transition: .4s;
+        background: $color;
+    }
+}

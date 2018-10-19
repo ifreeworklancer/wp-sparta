@@ -1,0 +1,54 @@
+#case-page {
+
+}
+
+.case-page-item {
+    position: relative;
+    margin-bottom: 50px;
+    height: 85vh;
+
+    
+    @media (max-width: map_get($grid-breakpoints, sm)) {
+        height: 600px;
+    }
+
+    &-img {
+        @extend %pos;
+        @extend %img;
+    }
+
+    &-description {
+        position: absolute;
+        left: -60px;
+        bottom: 10%;
+        padding: 35px 40px;
+        width: 100%;
+        max-width: 510px;
+        background: #fff;
+        color: $dark;
+        z-index: 5;
+
+        @media (max-width: map_get($grid-breakpoints, sm)) {
+            left: 0;
+            padding: 25px 15px;
+        }
+
+        &-content {
+
+            &-item {
+                margin-bottom: 10px;
+
+                &__title {
+                    font-weight: 600;
+                }
+            }
+        }
+
+        &__title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid $dark;
+        }
+    }
+}

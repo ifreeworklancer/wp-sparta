@@ -1,0 +1,26 @@
+@import "config/variables";
+@import "config/placeholder";
+@import "config/mixin";
+
+@import "~bootstrap/scss/bootstrap";
+
+
+@import "base/body";
+@import "base/btn";
+@import "base/section";
+
+@import "modules/menu";
+@import "modules/header-menu";
+@import "modules/sliders";
+@import "modules/forms";
+
+@import "layout/app-header";
+@import "layout/header-banner";
+@import "layout/side";
+@import "layout/teams";
+@import "layout/services";
+@import "layout/partners";
+@import "layout/app-footer";
+
+@import "layout/page-case";
+@import "layout/page-portfolio";
