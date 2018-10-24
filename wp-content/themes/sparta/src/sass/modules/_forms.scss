@@ -1,9 +1,13 @@
-#form-feedback {
+form {
     margin: 0 auto;
     max-width: 410px;
 
     .btn {
         background: transparent;
+
+        p {
+            margin: 0;
+        }
     }
 }
 

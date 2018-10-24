@@ -1,5 +1,6 @@
 import jquery from 'jquery';
 import Flickity from 'flickity';
+import asNavFor from 'flickity-as-nav-for'
 window.jQuery = window.$ = jquery;
 import ScrollReveal from 'scrollreveal'
 import 'flickity/dist/flickity.css';
@@ -24,25 +25,68 @@ import 'flickity/dist/flickity.css';
      * Form
      */
     $('.form-control').on('focus', function () {
-        $(this).parent().addClass('in-focus');
+        $(this).parents('.form-group').addClass('in-focus');
     });
 
     $('.form-control').on('blur', function () {
         if ($(this).val() !== "") {
-            $(this).parent().addClass('in-focus');
+            $(this).parents('.form-group').addClass('in-focus');
         } else {
-            $(this).parent().removeClass('in-focus');
+            $(this).parents('.form-group').removeClass('in-focus');
         }
     });
 
     /**
-     * Services tabs
+     * Scroll link
      */
+    $(".scroll-link").on("click", function (event) {
+        event.preventDefault();
+
+        var id = $(this).attr('href');
+
+        if (id.length > 1) {
+
+            var top = $(id).offset().top;
+
+            $('body,html').animate({
+                scrollTop: top
+            }, 1500);
+        }
+    });
+
+    /**
+     * Video
+     */
+    window.onload = function () {
+        $('[data-bg_src]').attr('src', $('[data-bg_src]').data('bg_src')).fadeIn();
+    }
+
+    /**
+     * Footer Map
+     */
+    ymaps.ready(initMap);
+
+    function initMap() {
+        // Создание карты.    
+        var myMap = new ymaps.Map("map", {
+            center: [55.76, 37.64],
+            zoom: 12
+        });
+
+        var myPlacemark = new ymaps.Placemark([55.8, 37.6], {}, {
+            preset: 'islands#redIcon'
+        });
+
+        myMap.geoObjects.add(myPlacemark);
+    }
+
+
 
     var servicesTabsNavItem = $('.services-tabs-nav-item');
     var servicesTabsContentItem = $('.services-tabs-content-img');
 
     $(servicesTabsContentItem).eq(0).addClass('active');
+    $(servicesTabsNavItem).eq(0).addClass('active');
 
     $(servicesTabsNavItem).on('click', function () {
         $(servicesTabsNavItem).removeClass('active');
@@ -154,6 +198,39 @@ import 'flickity/dist/flickity.css';
         distance: '200px',
     });
 
+    /**
+     * Youtube video
+     */
+    $('[data-src]').on('click', function (e) {
+        e.preventDefault();
+
+        var id = $(this).data('src'),
+            padding = $(window).width() > 768 ? 120 : 30,
+            ratio = 608 / 1080,
+            width = $(window).width() - padding,
+            height = width * ratio,
+            html = '<iframe style="width: ' + width + 'px; height: ' + height + 'px;" ' +
+            'src="' +
+            id + '" frameborder="0" gesture="media" allowfullscreen></iframe>';
+
+        $('body').append('<div class="outer">' + html + '</div>');
+    });
+
+    $(document).mouseup(function (e) {
+        var container = $('.outer iframe');
+
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            $('.outer').remove();
+        }
+    });
+
+    $(document).on('keyup', function (e) {
+        console.log(e.keyCode)
+        if (e.keyCode === 27) {
+            $('.outer').remove();
+        }
+    })
+
 
     /**
      * Slider nav num
@@ -209,33 +286,39 @@ import 'flickity/dist/flickity.css';
     /**
      * partners side
      */
-    if ($('.partners-slider')) {
+    if ($('.partners-video-slider')) {
 
-        var elem2 = document.querySelector('.partners-slider');
+        var elem2 = document.querySelector('.partners-video-slider');
+        var asNavFor = document.querySelector('.partners-slider')
         if (elem2) {
 
             const flkty2 = new Flickity(elem2, {
-
                 prevNextButtons: false,
                 pageDots: false,
                 cellAlign: 'left',
                 contain: true,
                 wrapAround: true,
-                draggable: true,
+                draggable: false,
             });
 
+            var navFor = new Flickity(asNavFor, {
+                asNavFor: elem2,
+                pageDots: false,
+                prevNextButtons: false,
+                wrapAround: true,
+            });
 
             var prevArrowSide = document.querySelector('.slider-nav-arrow-item--prev-partners');
 
             prevArrowSide.addEventListener('click', function () {
-                flkty2.previous(false, false);
+                navFor.previous(false, false);
             });
 
 
             var nextArrowSide = document.querySelector('.slider-nav-arrow-item--next-partners');
 
             nextArrowSide.addEventListener('click', function () {
-                flkty2.next(false, false);
+                navFor.next(false, false);
             });
         }
     }

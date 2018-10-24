@@ -1,6 +1,8 @@
 #app-header {
+    transition: .5s;
 
     &.light {
+        background: rgba(#000, .5);
 
         .logo {
 
@@ -39,6 +41,7 @@
     }
 
     &.dark {
+        background: rgba(#fff, .5);
 
         .menu-list {
 

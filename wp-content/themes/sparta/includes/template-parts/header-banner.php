@@ -1,5 +1,6 @@
 <!-- Header-banner -->
 <section id="header-banner" data-color="light">
+    <video data-bg_src="<?php echo get_theme_file_uri('video/video.mp4')?>" muted autoplay loop class="intro-video"></video>
     <div class="container-fluid h-100 p-0 pb-5 d-flex d-flex justify-content-start align-items-end">
         <div class="col-sm-8 col-xl-6 p-0">
             <div class="header-banner-item">
@@ -15,7 +16,7 @@
                     <?= $arch->post_content ?>
                 </p>
                 <div class="text-right">
-                <a href="" class="btn btn--white">
+                <a href="<?php the_permalink( 102 );?>" class="btn btn--white">
                     <div class="decor"></div>
                     Посмотреть
                 </a></div>

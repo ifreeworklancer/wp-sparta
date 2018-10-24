@@ -22,7 +22,7 @@
                             $services_fields = get_field('services', $services->ID);
                         ?>
                         <?php foreach($services_fields as $services_field) : ?>
-                            <div class="services-tabs-nav-item active" data-value="<?php echo $counter++ ?>">
+                            <div class="services-tabs-nav-item" data-value="<?php echo $counter++ ?>">
                                 <div class="services-tabs-nav-item-title">
                                     <span class="services-tabs-nav-item-title__value">
                                         <?php echo mb_substr ($services_field['services_title'], 0, 2) ?>    
@@ -53,7 +53,7 @@
                            <?= $services->post_content ?>
                         </p>
                         <div class="text-right">
-                            <a href="#" class="btn btn--dark">
+                            <a href="<?php the_permalink( 102 );?>" class="btn btn--dark">
                                 <div class="decor"></div>
                                 Портфолио
                             </a>

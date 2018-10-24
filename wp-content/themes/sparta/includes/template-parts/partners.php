@@ -1,16 +1,19 @@
 <!-- Partners-banner -->
 <section id="partners" data-color="light">
+    <?php $partners = get_post(75); ?>
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-sm-6 col-lg-4">
                 <div class="partners-description-content">
                     <h2 class="section-title section-title--partners section-title--start mb-5">
-                        <span class="section-title__first-letter">Н</span>
-                        АМ ДОВЕРЯЮТ
+                        <span class="section-title__first-letter">
+                            <?php echo mb_substr ($partners->post_title, 0, 1) ?>
+                        </span>
+                            <?php echo mb_substr ($partners->post_title, 1) ?>
                     </h2>
                     <div class="partners-description">
                         <p class="partners-description__text">
-                            Мы Ваш надежный партнёр в сфере архитектурных решений и освещения
+                        <?= $partners->post_content ?>
                         </p>
                         <a href="#" class="partners-description__more-info text-white">
                             Узнать больше
@@ -19,74 +22,36 @@
                 </div>
             </div>
             <div class="col-sm-6">
-                <div class="partners-video">
-                    <div class="partners-video-img" style="background-image: url('images/content/partners/partners-video-item.jpg');"></div>
-                    <div class="partners-video-icon">
-                        <svg width="55" height="40">
-                            <use xlink:href="#youtube-icon"></use>
-                        </svg>
-                    </div>
+                <div class="partners-video-slider">
+                    <?php 
+                        $partners_fields = get_field('partners_slider', $partners->ID);
+                    ?>
+                    <?php foreach($partners_fields as $partners_field) : ?>
+                        <div class="partners-video-slider-item" data-src="<?php echo $partners_field['partners_slider_link']?>">
+                            <div class="partners-video-slider-item-img" style="background-image: url(<?php echo $partners_field['partners_slider_images']['url'] ?>)"></div>
+                            <div class="partners-video-slider-item-icon">
+                                <svg width="55" height="40">
+                                    <use xlink:href="#youtube-icon"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-11 mx-auto">
                 <div class="partners-slider">
-                    <div class="partners-slider-item">
-                        <div class="partners-slider-item-img">
-                            <img src="images/content/partners/partners-item-1.png" alt="">
+                    <?php 
+                        $partners_asNavFor_fields = get_field('partners_slider_asNavFor', $partners->ID);
+                    ?>
+                    <?php foreach($partners_asNavFor_fields as $partners_asNavFor_field) : ?>
+                        <div class="partners-slider-item">
+                            <div class="partners-slider-item-img">
+                                <img src="<?php echo $partners_asNavFor_field['url'] ?>" alt="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="partners-slider-item">
-                        <div class="partners-slider-item-img">
-                            <img src="images/content/partners/partners-item-2.png" alt="">
-                        </div>
-                    </div>
-                    <div class="partners-slider-item">
-                        <div class="partners-slider-item-img">
-                            <img src="images/content/partners/partners-item-3.png" alt="">
-                        </div>
-                    </div>
-                    <div class="partners-slider-item">
-                        <div class="partners-slider-item-img">
-                            <img src="images/content/partners/partners-item-4.png" alt="">
-                        </div>
-                    </div>
-                    <div class="partners-slider-item">
-                        <div class="partners-slider-item-img">
-                            <img src="images/content/partners/partners-item-5.png" alt="">
-                        </div>
-                    </div>
-                    <div class="partners-slider-item">
-                        <div class="partners-slider-item-img">
-                            <img src="images/content/partners/partners-item-6.png" alt="">
-                        </div>
-                    </div>
-                    <div class="partners-slider-item">
-                        <div class="partners-slider-item-img">
-                            <img src="images/content/partners/partners-item-3.png" alt="">
-                        </div>
-                    </div>
-                    <div class="partners-slider-item">
-                        <div class="partners-slider-item-img">
-                            <img src="images/content/partners/partners-item-2.png" alt="">
-                        </div>
-                    </div>
-                    <div class="partners-slider-item">
-                        <div class="partners-slider-item-img">
-                            <img src="images/content/partners/partners-item-5.png" alt="">
-                        </div>
-                    </div>
-                    <div class="partners-slider-item">
-                        <div class="partners-slider-item-img">
-                            <img src="images/content/partners/partners-item-4.png" alt="">
-                        </div>
-                    </div>
-                    <div class="partners-slider-item">
-                        <div class="partners-slider-item-img">
-                            <img src="images/content/partners/partners-item-6.png" alt="">
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
             <div class="col-12 p-0">

@@ -30,27 +30,27 @@
             <nav class="menu">
                 <ul class="menu-list list-unstyled d-flex flex-column flex-xl-row align-items-center">
                     <li class="menu-list-item">
-                        <a href="#" class="menu-list-item__link">
+                        <a href="#teams" class="menu-list-item__link scroll-link">
                             О нас
                         </a>
                     </li>
                     <li class="menu-list-item">
-                        <a href="#" class="menu-list-item__link">
+                        <a href="#side" class="menu-list-item__link scroll-link">
                             Инновации
                         </a>
                     </li>
                     <li class="menu-list-item">
-                        <a href="#" class="menu-list-item__link">
+                        <a href="#services" class="menu-list-item__link scroll-link">
                             Услуги
                         </a>
                     </li>
                     <li class="menu-list-item">
-                        <a href="#" class="menu-list-item__link">
+                        <a href="#partners" class="menu-list-item__link scroll-link">
                             Нам доверяют
                         </a>
                     </li>
                     <li class="menu-list-item">
-                        <a href="#" class="menu-list-item__link">
+                        <a href="#app-footer" class="menu-list-item__link scroll-link">
                             Свяжитесь с нами
                         </a>
                     </li>

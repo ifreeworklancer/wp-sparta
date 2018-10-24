@@ -8,34 +8,10 @@
                     <span class="section-title__first-letter">С</span>
                     ВЯЖИТЕСЬ С НАМИ
                 </h2>
-                <form action="#" id="form-feedback">
-                    <div class="form-group position-relative mb-4">
-                        <label for="user-name" class="label-placeholder position-absolute">Ваше имя</label>
-                        <input type="text" class="form-control position-relative" id="user-name">
-                    </div>
-                    <div class="form-group position-relative mb-4">
-                        <label for="email" class="label-placeholder position-absolute">E-mail</label>
-                        <input type="email" class="form-control position-relative" id="email">
-                    </div>
-                    <div class="form-group position-relative mb-4">
-                        <label for="user-phone" class="label-placeholder position-absolute">Телефон</label>
-                        <input type="text" class="form-control position-relative" id="user-phone">
-                    </div>
-                    <div class="form-group form-group--textarea position-relative mb-4">
-                        <label for="user-message" class="label-placeholder position-absolute">Сообщение</label>
-                        <textarea class="form-control position-relative" id="user-message" rows="1"></textarea>
-                    </div>
-                    <div class="text-right">
-                        <button class="btn btn--white">
-                            <div class="decor"></div>
-                            Отправить
-                        </button>
-                    </div>
-                </form>
+                <?php echo do_shortcode('[contact-form-7 id="7" title="Свяжитесь с нами"]'); ?>
             </div>
             <div class="col-sm-5">
-                <div class="footer-map">
-                    <!-- <div class="footer-map-img" style="background-image: url('images/content/footer/footer-map.jpg');"></div> -->
+                <div id="map">
                 </div>
             </div>
         </div>
@@ -112,7 +88,9 @@
 
 
 <!-- Script -->
+<script src="https://api-maps.yandex.ru/2.1/?apikey=ac85c1db-1591-4ab4-be66-5f7e5e644630&lang=ru_RU" type="text/javascript"></script>
 <?php wp_footer(); ?>
+
 </body>
 
 </html>
