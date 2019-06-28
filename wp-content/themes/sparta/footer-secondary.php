@@ -91,6 +91,3 @@
 <?php wp_footer(); ?>
 <script src="https://api-maps.yandex.ru/2.1/?apikey=ac85c1db-1591-4ab4-be66-5f7e5e644630&lang=ru_RU" type="text/javascript"></script>
 
-</body>
-
-</html>

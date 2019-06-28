@@ -3,6 +3,7 @@
 	$templates = [
 		'header-banner',
 		'side',
+		'cases',
 		'teams',
 		'services',
 		'partners',

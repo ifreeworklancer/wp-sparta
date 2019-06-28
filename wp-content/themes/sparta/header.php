@@ -68,4 +68,6 @@
         </div>
     </header>
 
+    <?php wp_reset_postdata(); ?>
+
     <main>

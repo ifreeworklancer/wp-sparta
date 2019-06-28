@@ -1,0 +1,151 @@
+.case-page {
+    margin: 0;
+    position: relative;
+}
+
+.case-page-item {
+    position: relative;
+    height: 100vh;
+
+    
+    @media (max-width: map_get($grid-breakpoints, sm)) {
+        height: 600px;
+    }
+
+    &-img {
+        @extend %pos;
+        @extend %img;
+    }
+
+    &-description {
+        position: absolute;
+        width: 100%;
+        max-width: 600px;
+        max-height: 100%;
+        background: #fff;
+        color: $dark;
+        z-index: 5;
+        left: 0;
+        top: 90px;
+        padding: 25px 15px;
+
+        @media (min-width: 1500px) {
+            padding: 35px 40px;
+            left: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &-content {
+
+            &-item {
+                margin-bottom: 10px;
+
+                &__title {
+                    font-weight: 600;
+                }
+            }
+        }
+
+        &__title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid $dark;
+        }
+    }
+}
+
+
+.case-slider {
+    width: 100%;
+    &__item {
+        width: 100%;
+        margin: 0 15px;
+    }
+}
+
+.case-content {
+    background-color: #fff;
+    padding: 100px 50px;
+    h3 {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    a {
+        margin: 30px 30px 0 auto;
+    }
+}
+
+.case-thubnail {
+    padding-top: 1080/1920*100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+.case-slider-nav {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.case-main-title {
+    margin-left: -100px;
+    background-color: #fff;
+    margin-bottom: -100px;
+    padding: 20px;
+}
+
+
+.case-single-slider {
+    width: 100%;
+    height: 100%;
+    &__item {
+        width: 100%;
+        height: 100%;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0 15px;
+    }
+}
+
+.case-page{
+    .slider-nav-arrow {
+        width: 100%;
+        max-width: 170px;
+    
+        &-item {
+            padding: 15px 20px;
+            background: $primary;
+            transition: .5s;
+            cursor: pointer;
+    
+            &--next {
+                background: #313131;;
+                
+                svg {
+                    opacity: 1; 
+                }
+            }
+    
+            svg {
+                opacity: .4;
+                fill: #fff;
+                transition: .5s;
+            }
+    
+            &:hover {
+                
+                svg {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    
+}
+

@@ -1,10 +1,11 @@
 #partners {
     padding: 70px 0 60px;
-    background: $secondary;
     z-index: 2;
     overflow: hidden;
 
     .section-title {
+
+        color: $secondary;
 
         &.is-focus {
 
@@ -16,11 +17,11 @@
         &::before {
             content: '';
             position: absolute;
-            top: 2.5rem;
+            top: 4.5rem;
             left: 120px;
             width: 0;
             height: 4px;
-            background: #fff;
+            background: $secondary;
             z-index: -4;
             transition: 2s;
         }
@@ -37,7 +38,7 @@
 
             svg {
                 opacity: .5;
-                fill: #fff;
+                fill: $secondary;
                 transition: .5s;
             }
 
@@ -53,15 +54,17 @@
 
 .partners-description {
     padding: 20px;
-    border: 4px solid #fff;
+    border: 4px solid $secondary;
 
     &__text {
         font-size: 18px;
+        color: $secondary;
     }
 
     &__more-info {
         position: relative;
         padding-left: 60px;
+        color: $secondary;
 
         &::before {
             content: '';
@@ -71,10 +74,12 @@
             transform: translateY(-50%);
             width: 40px;
             height: 1px;
-            background: #fff;
+            background: $secondary;
         }
     }
 }
+
+
 
 // .partners-video-modal {
 //     position: fixed;

@@ -9,10 +9,10 @@
     }
 }
 
+
 .header-banner-item {
     position: relative;
-    padding-top: 30px;
-    padding-left: 170px;
+    padding: 30px 0 0 170px;
     background: rgba(#000, .8);
     @include ondecor-border(#fff);
 
@@ -55,6 +55,7 @@
     &-description {
         // padding-left: 150px;
         max-width: 490px;
+        padding-right: 20px;
 
     }
 }

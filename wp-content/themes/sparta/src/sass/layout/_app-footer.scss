@@ -1,6 +1,6 @@
 #app-footer {
     padding: 60px 70px 0;
-    background: $secondary;
+    background: #fff;
 
     @media (max-width: map_get($grid-breakpoints, md)) {
         padding: 60px 15px 0;
@@ -35,7 +35,7 @@
     margin-bottom: 40px;
 
     &-item {
-        color: #fff;
+        color: $secondary;
         transition: .5s;
 
         @media (max-width: map_get($grid-breakpoints, md)) {
@@ -44,14 +44,14 @@
 
         &__link {
             opacity: .6;
-            color: #fff;
+            color: $secondary;
         }
 
         &:hover {
 
             .footer-contacts-item__link {
                 opacity: 1;
-                color: #fff;
+                color: $secondary;
             }
         }
     }
@@ -64,7 +64,7 @@
 
         svg {
             opacity: .4;
-            fill: #fff;
+            fill: $secondary;
             transition: .5s;
         }
 

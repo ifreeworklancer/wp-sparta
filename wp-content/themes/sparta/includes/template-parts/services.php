@@ -14,24 +14,22 @@
                         <?php endforeach; ?>
                     </div>
                     <div class="services-tabs-nav">
-                        <div class="services-tabs-nav-title">
+                        <!-- <div class="services-tabs-nav-title">
                             При использовании информации о услугах
-                        </div>
+                        </div> -->
                         <?php 
                             $counter = 0;
                             $services_fields = get_field('services', $services->ID);
                         ?>
                         <?php foreach($services_fields as $services_field) : ?>
                             <div class="services-tabs-nav-item" data-value="<?php echo $counter++ ?>">
-                                <div class="services-tabs-nav-item-title">
-                                    <span class="services-tabs-nav-item-title__value">
+                                <div class="services-tabs-nav-item-title d-flex align-items-start">
+                                    <span class="services-tabs-nav-item-title__value mr-3">
                                         <?php echo mb_substr ($services_field['services_title'], 0, 2) ?>    
                                     </span>
                                     <?php echo mb_substr ($services_field['services_title'], 2) ?>    
                                 </div>
-                                <div class="services-tabs-nav-item-description">
-                                <?php echo $services_field['services_text']?>
-                                </div>
+                                
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -52,12 +50,12 @@
                         <p class="services-item-description__text mb-4">
                            <?= $services->post_content ?>
                         </p>
-                        <div class="text-right">
-                            <a href="<?php the_permalink( 102 );?>" class="btn btn--dark">
+                        <!-- <div class="text-right">
+                            <a href="#" class="btn btn--dark">
                                 <div class="decor"></div>
                                 Портфолио
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

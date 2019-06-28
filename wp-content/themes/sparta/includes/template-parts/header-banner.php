@@ -1,10 +1,25 @@
+
+<?php $arch = get_post(19); ?>
+
 <!-- Header-banner -->
 <section id="header-banner" data-color="light">
-    <video data-bg_src="<?php echo get_theme_file_uri('video/video.mp4')?>" muted autoplay loop class="intro-video"></video>
+
+    <?php $intro_slider = get_field('intro-slider', $arch->ID);?>
+
+    <div class="intro-slider">
+        <?php foreach($intro_slider as $intro_slide) : ?>
+            <div class="intro-slider__item" style="background-image: url(<?= $intro_slide['intro-slide-img'];?>)">
+                <p><?= ($intro_slide['intro-slide-title']);?></p>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+    
     <div class="container-fluid h-100 p-0 pb-5 d-flex d-flex justify-content-start align-items-end">
-        <div class="col-sm-8 col-xl-6 p-0">
+        <!-- <div class="col-sm-8 col-xl-6 p-0">
+            <h2 class="font-weight-bold text-center mb-3 header-banner-title"></h2> -->
             <div class="header-banner-item">
-            <?php $arch = get_post(19); ?>
+            
                 <div class="decoration"></div>
                 <h2 class="section-title section-title--center">
                     <span class="section-title__first-letter font-weight-normal">
